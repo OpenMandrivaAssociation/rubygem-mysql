@@ -1,52 +1,55 @@
-%define rname mysql
-%define name ruby-%{rname}
-%define version 2.8.1
-%define release %mkrel 9
+# Generated from mysql-2.8.1.gem by gem2rpm5 0.6.7 -*- rpm-spec -*-
+%define	rbname	mysql
 
-Summary:    This is the MySQL API module for Ruby
-Name: %{name}
-Version: %{version}
-Release: %{release}
-URL: http://mysql-win.rubyforge.org
-Source0: http://rubygems.org/gems/%{rname}-%{version}.gem
-License: Ruby License
-Group: Development/Ruby
-BuildRoot: %{_tmppath}/%{name}-buildroot
-Requires: rubygems
-Requires: ruby(abi) = 1.8
-Suggests: rubygem(hoe) >= 2.3.3
-BuildRequires: rubygems
-BuildRequires: ruby-devel mysql-devel
-Provides: rubygem(%{rname}) = %{version}
+Summary:	This is the MySQL API module for Ruby
+Name:		rubygem-%{rbname}
+
+Version:	2.8.1
+Release:	9
+Group:		Development/Ruby
+License:	GPLv2+ or Ruby
+URL:		http://mysql-win.rubyforge.org
+Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
+BuildRequires:	rubygems 
+BuildRequires:	ruby-devel mysql-devel
 
 %description
-This is the MySQL API module for Ruby.
-It provides the same functions for Ruby programs that the MySQL C API
-provides for C programs.
-
+This is the MySQL API module for Ruby. It provides the same functions for Ruby
+programs that the MySQL C API provides for C programs.
 This is a conversion of tmtm's original extension into a proper RubyGems.
+
+%package	doc
+Summary:	Documentation for %{name}
+Group:		Books/Computer books
+Requires:	%{name} = %{EVRD}
+BuildArch:	noarch
+
+%description	doc
+Documents, RDoc & RI documentation for %{name}.
 
 %prep
 %setup -q
-tar xmf data.tar.gz
 
 %build
-%gem_build
+%gem_build -f '(extra|tasks|test)'
 
 %install
-rm -rf %buildroot
 %gem_install
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
-%dir %{ruby_gemdir}/gems/%{rname}-%{version}/
-%{ruby_gemdir}/gems/%{rname}-%{version}/lib
-%doc %{ruby_gemdir}/doc/%{rname}-%{version}
-%doc %{ruby_gemdir}/gems/%{rname}-%{version}/History.txt
-%doc %{ruby_gemdir}/gems/%{rname}-%{version}/Manifest.txt
-%doc %{ruby_gemdir}/gems/%{rname}-%{version}/README.txt
-%{ruby_gemdir}/specifications/%{rname}-%{version}.gemspec
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/extra
+%{ruby_gemdir}/gems/%{rbname}-%{version}/extra/*.css
+%{ruby_gemdir}/gems/%{rbname}-%{version}/extra/*.html
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/tasks
+%{ruby_gemdir}/gems/%{rbname}-%{version}/tasks/*.rake
 %{ruby_sitearchdir}/mysql_api.so
+%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+
+%files doc
+%{ruby_gemdir}/doc/%{rbname}-%{version}
+%{ruby_gemdir}/gems/%{rbname}-%{version}/*.txt
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
+%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
