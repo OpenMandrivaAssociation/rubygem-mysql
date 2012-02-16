@@ -12,6 +12,7 @@ URL:		http://mysql-win.rubyforge.org
 Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
 BuildRequires:	rubygems 
 BuildRequires:	ruby-devel mysql-devel
+%rename		ruby-mysql
 
 %description
 This is the MySQL API module for Ruby. It provides the same functions for Ruby
