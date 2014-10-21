@@ -39,16 +39,16 @@ Documents, RDoc & RI documentation for %{name}.
 
 %files
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/extra
-%{ruby_gemdir}/gems/%{rbname}-%{version}/extra/*.css
-%{ruby_gemdir}/gems/%{rbname}-%{version}/extra/*.html
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/tasks
-%{ruby_gemdir}/gems/%{rbname}-%{version}/tasks/*.rake
-%{ruby_sitearchdir}/mysql_api.so
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/extra
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/extra/*.css
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/extra/*.html
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/tasks
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/tasks/*.rake
+# %{ruby_sitearchdir}/mysql_api.so
 %{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
-%{ruby_sitedir}/mysql/mysql_api.so
+# %{ruby_sitedir}/mysql/mysql_api.so
 %{_datadir}/gems/doc/mysql-2.9.1/rdoc/History_txt.html
 %{_datadir}/gems/doc/mysql-2.9.1/rdoc/Manifest_txt.html
 %{_datadir}/gems/doc/mysql-2.9.1/rdoc/Mysql.html
@@ -114,10 +114,10 @@ Documents, RDoc & RI documentation for %{name}.
 %{_datadir}/gems/gems/mysql-2.9.1/tasks/native.rake
 %{_datadir}/gems/gems/mysql-2.9.1/tasks/vendor_mysql.rake
 %{_datadir}/gems/gems/mysql-2.9.1/test/test_mysql.rb
-%{_datadir}/gems/specifications/mysql-2.9.1.gemspec
+# %{_datadir}/gems/specifications/mysql-2.9.1.gemspec
 
 %files doc
 %{ruby_gemdir}/doc/%{rbname}-%{version}
 %{ruby_gemdir}/gems/%{rbname}-%{version}/*.txt
-%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
-%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
+# %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
+# %{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
