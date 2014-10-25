@@ -27,12 +27,12 @@ programs that the MySQL C API provides for C programs.
 This is a conversion of tmtm's original extension into a proper RubyGems.
 
 %files
-%{ruby_gemdir}/gems/%{rbname}-%{version}/extra/*.css
-%{ruby_gemdir}/gems/%{rbname}-%{version}/extra/*.html
-%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/
-%{ruby_gemdir}/gems/%{rbname}-%{version}/tasks/*.rake
+%{gem_dir}/gems/%{rbname}-%{version}/extra/*.css
+%{gem_dir}/gems/%{rbname}-%{version}/extra/*.html
+%{gem_dir}/gems/%{rbname}-%{version}/lib/
+%{gem_dir}/gems/%{rbname}-%{version}/tasks/*.rake
 %{ruby_sitearchdir}/mysql/mysql_api.so
-%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
+%{gem_dir}/specifications/%{rbname}-%{version}.gemspec
 #-----------------------------------------------------------
 
 %package	doc
@@ -45,9 +45,9 @@ BuildArch:	noarch
 Documents, RDoc & RI documentation for %{name}.
 
 %files doc
-%{ruby_gemdir}/doc/%{rbname}-%{version}
-%{ruby_gemdir}/gems/%{rbname}-%{version}/*.txt
-%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
+%{gem_dir}/doc/%{rbname}-%{version}
+%{gem_dir}/gems/%{rbname}-%{version}/*.txt
+%{gem_dir}/gems/%{rbname}-%{version}/test/*.rb
 #-----------------------------------------------------------
 
 %prep
@@ -59,9 +59,9 @@ Documents, RDoc & RI documentation for %{name}.
 %install
 %gem_install
 
-rm -fr %{buildroot}%{ruby_gemdir}/gems/%{rbname}-%{version}/.gemtest
-perl -pi -e "s|/usr/local/bin/ruby|/usr/bin/ruby|" %{buildroot}%{ruby_gemdir}/gems/%{rbname}-%{version}/test/test_mysql.rb
-chmod +x %{buildroot}%{ruby_gemdir}/gems/%{rbname}-%{version}/test/test_mysql.rb
+rm -fr %{buildroot}%{gem_dir}/gems/%{rbname}-%{version}/.gemtest
+perl -pi -e "s|/usr/local/bin/ruby|/usr/bin/ruby|" %{buildroot}%{gem_dir}/gems/%{rbname}-%{version}/test/test_mysql.rb
+chmod +x %{buildroot}%{gem_dir}/gems/%{rbname}-%{version}/test/test_mysql.rb
 
 
 
