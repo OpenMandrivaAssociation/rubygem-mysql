@@ -5,7 +5,7 @@ Summary:	This is the MySQL API module for Ruby
 Name:		rubygem-%{rbname}
 
 Version:	2.9.1
-Release:	1
+Release:	2
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
 URL:		http://mysql-win.rubyforge.org
