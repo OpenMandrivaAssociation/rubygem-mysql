@@ -8,7 +8,7 @@ Version:	2.9.1
 Release:	2
 Group:		Development/Ruby
 License:	GPLv2+ or Ruby
-URL:		http://mysql-win.rubyforge.org
+URL:		https://mysql-win.rubyforge.org
 Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
 BuildRequires:	rubygems 
 BuildRequires:	ruby-devel 
